@@ -1,0 +1,160 @@
+<svg width="300" height="400" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="webGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#14B8A6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#22D3EE;stop-opacity:1" />
+    </linearGradient>
+    <filter id="screenGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Desktop browser -->
+  <g transform="translate(30, 30)">
+    <!-- Monitor with glow -->
+    <rect x="0" y="0" width="240" height="170" rx="8" fill="url(#webGrad)" opacity="0.8" stroke="#14B8A6" stroke-width="2" filter="url(#screenGlow)"/>
+
+    <!-- Browser chrome -->
+    <rect x="0" y="0" width="240" height="30" rx="8" fill="url(#webGrad)" opacity="0.9"/>
+    <circle cx="15" cy="15" r="5" fill="#ffffff" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.7;0.9" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="32" cy="15" r="5" fill="#ffffff" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.7;0.9" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="49" cy="15" r="5" fill="#ffffff" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.7;0.9" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Address bar -->
+    <rect x="60" y="10" width="170" height="12" rx="6" fill="#ffffff" opacity="0.5"/>
+
+    <!-- Screen content -->
+    <rect x="8" y="38" width="224" height="124" rx="4" fill="#ffffff" opacity="0.95"/>
+
+    <!-- Page content with loading animation -->
+    <g transform="translate(15, 45)">
+      <!-- Header -->
+      <rect x="0" y="0" width="210" height="20" rx="4" fill="url(#webGrad)" opacity="0.4">
+        <animate attributeName="opacity" values="0.4;0.6;0.4" dur="3s" repeatCount="indefinite"/>
+      </rect>
+
+      <!-- Navigation -->
+      <rect x="0" y="28" width="50" height="8" rx="4" fill="#14B8A6" opacity="0.5">
+        <animate attributeName="width" values="50;55;50" dur="2.5s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="58" y="28" width="50" height="8" rx="4" fill="#14B8A6" opacity="0.5">
+        <animate attributeName="width" values="50;55;50" dur="2.7s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="116" y="28" width="50" height="8" rx="4" fill="#14B8A6" opacity="0.5">
+        <animate attributeName="width" values="50;55;50" dur="2.9s" repeatCount="indefinite"/>
+      </rect>
+
+      <!-- Content blocks -->
+      <rect x="0" y="44" width="100" height="65" rx="6" fill="#22D3EE" opacity="0.3"/>
+      <rect x="108" y="44" width="102" height="30" rx="6" fill="#5DBEBD" opacity="0.3"/>
+      <rect x="108" y="79" width="102" height="30" rx="6" fill="#14B8A6" opacity="0.3"/>
+    </g>
+
+    <!-- Monitor stand -->
+    <rect x="105" y="170" width="30" height="25" fill="url(#webGrad)" opacity="0.7"/>
+    <rect x="85" y="195" width="70" height="8" rx="4" fill="url(#webGrad)" opacity="0.7"/>
+  </g>
+
+  <!-- Mobile phone -->
+  <g transform="translate(110, 250)">
+    <!-- Phone frame with glow -->
+    <rect x="0" y="0" width="80" height="135" rx="10" fill="url(#webGrad)" opacity="0.8" stroke="#22D3EE" stroke-width="2" filter="url(#screenGlow)"/>
+
+    <!-- Notch -->
+    <rect x="24" y="0" width="32" height="10" rx="5" fill="url(#webGrad)" opacity="0.8"/>
+
+    <!-- Screen -->
+    <rect x="7" y="16" width="66" height="110" rx="5" fill="#ffffff" opacity="0.95"/>
+
+    <!-- Mobile app interface -->
+    <g transform="translate(12, 22)">
+      <!-- Status bar -->
+      <circle cx="7" cy="6" r="3" fill="#22D3EE" opacity="0.6">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <rect x="44" y="4" width="12" height="5" rx="2" fill="#22D3EE" opacity="0.6"/>
+
+      <!-- App header -->
+      <rect x="0" y="16" width="56" height="12" rx="3" fill="url(#webGrad)" opacity="0.4">
+        <animate attributeName="width" values="56;58;56" dur="3s" repeatCount="indefinite"/>
+      </rect>
+
+      <!-- Content cards -->
+      <rect x="0" y="34" width="56" height="28" rx="5" fill="#14B8A6" opacity="0.3"/>
+      <rect x="0" y="68" width="56" height="20" rx="5" fill="#22D3EE" opacity="0.3"/>
+      <rect x="0" y="94" width="56" height="6" rx="3" fill="#5DBEBD" opacity="0.3"/>
+    </g>
+
+    <!-- Home indicator -->
+    <rect x="30" y="122" width="20" height="4" rx="2" fill="#ffffff" opacity="0.7"/>
+  </g>
+
+  <!-- Responsive connection -->
+  <g opacity="0.6">
+    <path d="M 150 225 Q 150 235 150 250" stroke="url(#webGrad)" stroke-width="2" fill="none" stroke-dasharray="8,5">
+      <animate attributeName="stroke-dashoffset" values="0;-13" dur="1.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Data sync particles -->
+  <g opacity="0.5">
+    <circle cx="145" cy="230" r="4" fill="#14B8A6">
+      <animate attributeName="cy" values="230;245" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="155" cy="235" r="3" fill="#22D3EE">
+      <animate attributeName="cy" values="235;248" dur="2.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Floating UI icons -->
+  <g transform="translate(15, 120)" opacity="0.5">
+    <circle cx="20" cy="20" r="18" fill="#22D3EE" opacity="0.4"/>
+    <path d="M 12 20 L 17 26 L 28 15" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <animate attributeName="opacity" values="1;0.5;1" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g transform="translate(250, 310)" opacity="0.5">
+    <circle cx="20" cy="20" r="18" fill="#14B8A6" opacity="0.4"/>
+    <path d="M 20 13 L 20 27 M 13 20 L 27 20" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round">
+      <animate attributeName="opacity" values="1;0.5;1" dur="2.7s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Responsive design indicator -->
+  <g transform="translate(120, 215)" opacity="0.6">
+    <!-- Desktop icon -->
+    <rect x="0" y="2" width="22" height="15" rx="2" fill="#5DBEBD"/>
+    <rect x="9" y="17" width="4" height="4" fill="#5DBEBD"/>
+    <rect x="4" y="21" width="14" height="1" fill="#5DBEBD"/>
+
+    <!-- Bidirectional arrows -->
+    <g>
+      <path d="M 26 9 L 34 9" stroke="#5DBEBD" stroke-width="2" fill="none">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 31 7 L 34 9 L 31 11" stroke="#5DBEBD" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M 29 7 L 26 9 L 29 11" stroke="#5DBEBD" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </g>
+
+    <!-- Mobile icon -->
+    <rect x="38" y="4" width="12" height="18" rx="2" fill="#22D3EE"/>
+    <rect x="40" y="7" width="8" height="12" fill="#ffffff" opacity="0.6"/>
+  </g>
+
+  <!-- Code brackets decoration -->
+  <text x="10" y="80" font-family="monospace" font-size="30" fill="#14B8A6" opacity="0.2">&lt;/&gt;</text>
+  <text x="258" y="360" font-family="monospace" font-size="26" fill="#22D3EE" opacity="0.2">&lt;/&gt;</text>
+</svg>

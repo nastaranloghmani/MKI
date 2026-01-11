@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)",
+      "Bash(npm install)",
+      "Bash(npm run dev:*)",
+      "Bash(del componentsHero.tsx)",
+      "Bash(npm install:*)",
+      "Bash(timeout:*)",
+      "Bash(mkdir:*)",
+      "Bash(python generate_service_images.py:*)",
+      "Bash(python3:*)",
+      "Bash(where:*)",
+      "Bash(if not exist publicanimations mkdir publicanimations)",
+      "Bash(ls:*)",
+      "Bash(git checkout c:UsersnastaOneDriveDesktopMKI - Copy \\\\\\(2\\\\\\) - Copypublicservices*.svg)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

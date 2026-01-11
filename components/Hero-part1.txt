@@ -1,0 +1,74 @@
+import React, { useEffect, useRef, useState } from 'react'
+import { ArrowRight, ChevronDown } from 'lucide-react'
+
+export function Hero() {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
+    }
+    resizeCanvas()
+    window.addEventListener('resize', resizeCanvas)
+
+    const gridSize = 50
+    const lines: Array<{
+      x1: number
+      y1: number
+      x2: number
+      y2: number
+      opacity: number
+      baseOpacity: number
+      speed: number
+    }> = []
+
+    for (let i = 0; i < canvas.width; i += gridSize) {
+      lines.push({
+        x1: i,
+        y1: 0,
+        x2: i,
+        y2: canvas.height,
+        opacity: 0.1,
+        baseOpacity: 0.1,
+        speed: Math.random() * 0.5 + 0.5,
+      })
+    }
+    for (let i = 0; i < canvas.height; i += gridSize) {
+      lines.push({
+        x1: 0,
+        y1: i,
+        x2: canvas.width,
+        y2: i,
+        opacity: 0.1,
+        baseOpacity: 0.1,
+        speed: Math.random() * 0.5 + 0.5,
+      })
+    }
+
+    const nodes: Array<{
+      x: number
+      y: number
+      vx: number
+      vy: number
+      size: number
+    }> = []
+
+    for (let i = 0; i < 30; i++) {
+      nodes.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        size: Math.random() * 2 + 1,
+      })
+    }
+
+    let animationFrameId: number

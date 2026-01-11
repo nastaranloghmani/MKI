@@ -1,0 +1,41 @@
+<svg width="100" height="80" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5DBEBD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#14B8A6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Cloud with infinity symbol -->
+  <g transform="translate(50, 28)">
+    <!-- Cloud shape -->
+    <path d="M -15 5 Q -18 0 -12 -3 Q -8 -10 0 -8 Q 8 -10 12 -3 Q 18 0 15 5 Q 15 10 8 10 L -8 10 Q -15 10 -15 5 Z"
+          fill="url(#cloudGrad)" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Cloud highlight -->
+    <ellipse cx="0" cy="0" rx="10" ry="6" fill="#ffffff" opacity="0.3">
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <!-- Data upload arrows -->
+    <g opacity="0.6">
+      <path d="M -8 18 L -8 12 M -10 14 L -8 12 L -6 14" stroke="#14B8A6" stroke-width="1.5" fill="none">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 0 18 L 0 12 M -2 14 L 0 12 L 2 14" stroke="#22D3EE" stroke-width="1.5" fill="none">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" begin="0.5s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 8 18 L 8 12 M 6 14 L 8 12 L 10 14" stroke="#5DBEBD" stroke-width="1.5" fill="none">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" begin="1s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+
+  <!-- Cloud Label -->
+  <text x="12" y="58" font-family="Arial, sans-serif" font-size="10" fill="#5DBEBD" opacity="0.7" font-weight="600">Cloud</text>
+
+  <!-- Infinity Symbol -->
+  <text x="48" y="75" font-family="Arial, sans-serif" font-size="24" fill="url(#cloudGrad)" font-weight="bold">∞</text>
+</svg>

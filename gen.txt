@@ -1,0 +1,49 @@
+import React, { useEffect, useRef, useState } from 'react'
+import { ArrowRight, ChevronDown } from 'lucide-react'
+
+export function Hero() {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
+    }
+    resizeCanvas()
+    window.addEventListener('resize', resizeCanvas)
+    const gridSize = 50
+    const lines: Array<{ x1: number; y1: number; x2: number; y2: number; opacity: number; baseOpacity: number; speed: number }> = []
+    for (let i = 0; i < canvas.width; i += gridSize) {
+      lines.push({ x1: i, y1: 0, x2: i, y2: canvas.height, opacity: 0.1, baseOpacity: 0.1, speed: Math.random() * 0.5 + 0.5 })
+    }
+    for (let i = 0; i < canvas.height; i += gridSize) {
+      lines.push({ x1: 0, y1: i, x2: canvas.width, y2: i, opacity: 0.1, baseOpacity: 0.1, speed: Math.random() * 0.5 + 0.5 })
+    }
+    const nodes: Array<{ x: number; y: number; vx: number; vy: number; size: number }> = []
+    for (let i = 0; i < 30; i++) {
+      nodes.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, vx: (Math.random() - 0.5) * 0.5, vy: (Math.random() - 0.5) * 0.5, size: Math.random() * 2 + 1 })
+    }
+    let animationFrameId: number
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      lines.forEach((line) => {
+        const dx1 = mousePos.x - line.x1
+        const dy1 = mousePos.y - line.y1
+        const dx2 = mousePos.x - line.x2
+        const dy2 = mousePos.y - line.y2
+        const dist1 = Math.sqrt(dx1 * dx1 + dy1 * dy1)
+        const dist2 = Math.sqrt(dx2 * dx2 + dy2 * dy2)
+        const minDist = Math.min(dist1, dist2)
+        if (minDist < 200) {
+          line.opacity = line.baseOpacity + (1 - minDist / 200) * 0.4
+        } else {
+          line.opacity = line.baseOpacity
+        }
+        ctx.beginPath()
+        ctx.moveTo(line.x1, line.y1)
+        ctx.lineTo(line.x2, line.y2)

@@ -1,0 +1,54 @@
+<svg width="100" height="80" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="iotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22D3EE;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5DBEBD;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- IoT Connected Devices -->
+  <g transform="translate(50, 30)">
+    <!-- Central hub -->
+    <circle cx="0" cy="0" r="5" fill="url(#iotGrad)">
+      <animate attributeName="r" values="5;6;5" dur="2s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Connected devices -->
+    <circle cx="-18" cy="0" r="3" fill="#22D3EE">
+      <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="18" cy="0" r="3" fill="#14B8A6">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="-15" r="3" fill="#5DBEBD">
+      <animate attributeName="opacity" values="1;0.5;1" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="15" r="3" fill="#22D3EE">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Connection lines -->
+    <g opacity="0.5" stroke-width="1.5" stroke-dasharray="2,2">
+      <line x1="-18" y1="0" x2="-5" y2="0" stroke="#22D3EE"/>
+      <line x1="18" y1="0" x2="5" y2="0" stroke="#14B8A6"/>
+      <line x1="0" y1="-15" x2="0" y2="-5" stroke="#5DBEBD"/>
+      <line x1="0" y1="15" x2="0" y2="5" stroke="#22D3EE"/>
+    </g>
+
+    <!-- Data packets moving -->
+    <circle cx="-10" cy="0" r="1.5" fill="#14B8A6">
+      <animate attributeName="cx" values="-18;-5" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="10" cy="0" r="1.5" fill="#22D3EE">
+      <animate attributeName="cx" values="18;5" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- IoT Label -->
+  <text x="18" y="58" font-family="Arial, sans-serif" font-size="10" fill="#5DBEBD" opacity="0.7" font-weight="600">IoT</text>
+
+  <!-- 24/7 Text -->
+  <text x="45" y="75" font-family="Arial, sans-serif" font-size="18" fill="url(#iotGrad)" font-weight="bold">24/7</text>
+</svg>

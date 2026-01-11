@@ -1,0 +1,66 @@
+<svg width="100" height="80" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#14B8A6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#22D3EE;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- AI Neural Network -->
+  <g transform="translate(50, 35)">
+    <!-- Neural nodes -->
+    <circle cx="-15" cy="-10" r="2.5" fill="#14B8A6">
+      <animate attributeName="r" values="2.5;3.5;2.5" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="-15" r="2.5" fill="#22D3EE">
+      <animate attributeName="r" values="2.5;3.5;2.5" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="15" cy="-10" r="2.5" fill="#5DBEBD">
+      <animate attributeName="r" values="2.5;3.5;2.5" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Center node -->
+    <circle cx="0" cy="0" r="4" fill="url(#aiGrad)">
+      <animate attributeName="r" values="4;5;4" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Bottom nodes -->
+    <circle cx="-15" cy="10" r="2.5" fill="#22D3EE">
+      <animate attributeName="r" values="2.5;3.5;2.5" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="15" cy="10" r="2.5" fill="#14B8A6">
+      <animate attributeName="r" values="2.5;3.5;2.5" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Connection lines -->
+    <g opacity="0.6" stroke-width="1.5">
+      <line x1="-15" y1="-10" x2="0" y2="0" stroke="#14B8A6">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+      </line>
+      <line x1="0" y1="-15" x2="0" y2="0" stroke="#22D3EE">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2.2s" repeatCount="indefinite"/>
+      </line>
+      <line x1="15" y1="-10" x2="0" y2="0" stroke="#5DBEBD">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2.4s" repeatCount="indefinite"/>
+      </line>
+      <line x1="0" y1="0" x2="-15" y2="10" stroke="#22D3EE">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2.6s" repeatCount="indefinite"/>
+      </line>
+      <line x1="0" y1="0" x2="15" y2="10" stroke="#14B8A6">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2.8s" repeatCount="indefinite"/>
+      </line>
+    </g>
+
+    <!-- Pulse effect -->
+    <circle cx="0" cy="0" r="4" fill="none" stroke="url(#aiGrad)" stroke-width="1.5" opacity="0">
+      <animate attributeName="r" values="4;15;4" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- AI Label -->
+  <text x="20" y="62" font-family="Arial, sans-serif" font-size="10" fill="#5DBEBD" opacity="0.7" font-weight="600">AI</text>
+
+  <!-- 99% Text -->
+  <text x="40" y="75" font-family="Arial, sans-serif" font-size="18" fill="url(#aiGrad)" font-weight="bold">99%</text>
+</svg>

@@ -1,0 +1,71 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background elements -->
+  <circle cx="320" cy="60" r="40" fill="#5DBEBD" opacity="0.1"/>
+  <circle cx="350" cy="100" r="20" fill="#14B8A6" opacity="0.15"/>
+  <circle cx="60" cy="250" r="30" fill="#22D3EE" opacity="0.1"/>
+
+  <!-- Grid dots pattern -->
+  <g opacity="0.2">
+    <circle cx="50" cy="50" r="2" fill="#5DBEBD"/>
+    <circle cx="100" cy="50" r="2" fill="#5DBEBD"/>
+    <circle cx="150" cy="50" r="2" fill="#5DBEBD"/>
+    <circle cx="50" cy="100" r="2" fill="#5DBEBD"/>
+    <circle cx="100" cy="100" r="2" fill="#5DBEBD"/>
+    <circle cx="150" cy="100" r="2" fill="#5DBEBD"/>
+  </g>
+
+  <!-- Person with briefcase -->
+  <g transform="translate(80, 120)">
+    <!-- Briefcase -->
+    <rect x="-15" y="60" width="30" height="25" rx="3" fill="#5DBEBD"/>
+    <rect x="-10" y="55" width="20" height="5" rx="2" fill="#14B8A6"/>
+    <circle cx="0" cy="67" r="3" fill="#fff" opacity="0.3"/>
+
+    <!-- Person -->
+    <circle cx="0" cy="20" r="12" fill="#2C3E50"/>
+    <path d="M -10 35 Q 0 32 10 35 L 8 75 L -8 75 Z" fill="#5DBEBD"/>
+    <path d="M -8 75 L -12 110" stroke="#2C3E50" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 8 75 L 12 110" stroke="#2C3E50" stroke-width="4" stroke-linecap="round"/>
+    <path d="M -10 40 L -25 65" stroke="#2C3E50" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 10 40 L 25 65" stroke="#2C3E50" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Rising bar chart -->
+  <g transform="translate(220, 100)">
+    <!-- Bars -->
+    <rect x="10" y="100" width="25" height="50" rx="3" fill="#5DBEBD" opacity="0.6">
+      <animate attributeName="height" values="50;60;50" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="100;90;100" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="45" y="80" width="25" height="70" rx="3" fill="#14B8A6" opacity="0.7">
+      <animate attributeName="height" values="70;85;70" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="80;65;80" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="80" y="50" width="25" height="100" rx="3" fill="#22D3EE" opacity="0.8">
+      <animate attributeName="height" values="100;120;100" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="50;30;50" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="115" y="30" width="25" height="120" rx="3" fill="#5DBEBD">
+      <animate attributeName="height" values="120;140;120" dur="2s" begin="0.9s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="30;10;30" dur="2s" begin="0.9s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- Base line -->
+    <line x1="0" y1="155" x2="150" y2="155" stroke="#5DBEBD" stroke-width="2" opacity="0.3"/>
+  </g>
+
+  <!-- Technology elements -->
+  <g transform="translate(50, 30)">
+    <circle cx="0" cy="0" r="8" fill="none" stroke="#5DBEBD" stroke-width="2" opacity="0.4">
+      <animate attributeName="r" values="8;12;8" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.1;0.4" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Connecting lines -->
+  <g opacity="0.2">
+    <path d="M 80 150 Q 150 120 220 150" stroke="#5DBEBD" stroke-width="2" fill="none" stroke-dasharray="5,5">
+      <animate attributeName="stroke-dashoffset" values="0;10;0" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>
