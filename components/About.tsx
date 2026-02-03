@@ -30,7 +30,7 @@ export function About() {
         'We identify and cultivate technologies that have the potential to reshape industries and improve lives.',
       reveal: card1Reveal,
       delay: '0.1s',
-      animation: '/animations/strategic-vision.gif',
+      animation: '/animations/strategic-vision.svg',
     },
     {
       title: 'Sustainable Growth',
@@ -38,7 +38,7 @@ export function About() {
         'Building resilient systems and business models that stand the test of time in a rapidly evolving digital landscape.',
       reveal: card2Reveal,
       delay: '0.2s',
-      animation: '/animations/sustainable-growth.gif',
+      animation: '/animations/sustainable-growth.svg',
     },
     {
       title: 'Rapid Innovation',
@@ -46,18 +46,18 @@ export function About() {
         'Accelerating development through agile methodologies and cutting-edge technical expertise.',
       reveal: card3Reveal,
       delay: '0.3s',
-      animation: '/animations/rapid-innovation.gif',
+      animation: '/animations/rapid-innovation.svg',
     },
   ]
 
   // Animation Component
   const AnimationCard = ({ animation, title, isDark, index }: any) => (
-    <div className="group relative w-full max-w-sm mx-auto">
+    <div className="group relative w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto">
       <img
         src={animation}
         alt={title}
         className="w-full h-auto object-contain relative z-10 rounded-2xl"
-        style={{ maxHeight: '180px', maxWidth: '340px' }}
+        style={{ maxHeight: '200px', maxWidth: '100%' }}
       />
     </div>
   )
@@ -65,7 +65,7 @@ export function About() {
   return (
     <section
       id="about"
-      className={`relative py-16 md:py-20 overflow-hidden ${
+      className={`relative py-12 sm:py-16 md:py-20 overflow-hidden ${
         isDark ? 'bg-slate-900' : 'bg-white'
       }`}
     >
@@ -99,7 +99,7 @@ export function About() {
         {/* Section Header with Floating Animation */}
         <div
           ref={headerReveal.ref}
-          className={`text-center max-w-3xl mx-auto mb-12 transition-all duration-700 ${
+          className={`text-center max-w-3xl mx-auto mb-8 sm:mb-10 md:mb-12 px-4 transition-all duration-700 ${
             headerReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
           style={{
@@ -107,16 +107,16 @@ export function About() {
           }}
         >
           <div
-            className={`inline-block px-4 py-1.5 rounded-full mb-4 animate-glow-pulse ${
+            className={`inline-block px-3 sm:px-4 py-1 sm:py-1.5 rounded-full mb-3 sm:mb-4 animate-glow-pulse ${
               isDark ? 'bg-teal-500/10 text-teal-400' : 'bg-teal-500/10 text-teal-600'
             }`}
           >
-            <span className="text-sm font-semibold">Who We Are</span>
+            <span className="text-xs sm:text-sm font-semibold">Who We Are</span>
           </div>
 
           {/* Animated floating text */}
           <h2
-            className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-6 ${
+            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-5 md:mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}
             style={{
@@ -128,7 +128,7 @@ export function About() {
           </h2>
 
           <p
-            className={`text-lg leading-relaxed mb-4 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}
+            className={`text-sm sm:text-base md:text-lg leading-relaxed mb-3 sm:mb-4 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}
             style={{
               transform: `translateY(${Math.sin((scrollY + 0.2) * 3) * 8}px)`,
               transition: 'transform 0.1s ease-out',
@@ -138,7 +138,7 @@ export function About() {
           </p>
 
           <p
-            className={`text-lg leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}
+            className={`text-sm sm:text-base md:text-lg leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}
             style={{
               transform: `translateY(${Math.sin((scrollY + 0.3) * 3) * 6}px)`,
               transition: 'transform 0.1s ease-out',
@@ -149,8 +149,8 @@ export function About() {
         </div>
 
         {/* Feature Cards - Creative Diagonal Layout */}
-        <div className="relative max-w-7xl mx-auto">
-          <div className="space-y-12 md:space-y-16">
+        <div className="relative max-w-7xl mx-auto px-4">
+          <div className="space-y-6 sm:space-y-8 md:space-y-10">
             {features.map((feature, index) => {
               const isEven = index % 2 === 0
               return (
@@ -166,40 +166,30 @@ export function About() {
                     transitionDelay: feature.reveal.isVisible ? `${index * 250}ms` : '0s',
                   }}
                 >
-                  <div className={`relative flex flex-col lg:flex-row ${isEven ? '' : 'lg:flex-row-reverse'} items-center gap-6 lg:gap-10 group`}>
+                  <div className={`relative flex flex-col lg:flex-row ${isEven ? '' : 'lg:flex-row-reverse'} items-center gap-3 sm:gap-4 lg:gap-6 group`}>
                     {/* Animation Side with Decorative Elements */}
-                    <div className="relative w-full lg:w-2/5">
-                      {/* Floating number badge */}
-                      <div className={`absolute -top-4 ${isEven ? '-left-4' : '-right-4'} w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-600 flex items-center justify-center font-black text-white text-2xl shadow-2xl z-20 transition-all duration-700 ${
-                        feature.reveal.isVisible ? 'scale-100 rotate-0' : 'scale-0 rotate-180'
-                      }`}
-                      style={{
-                        transitionDelay: feature.reveal.isVisible ? `${index * 250 + 400}ms` : '0s',
-                      }}>
-                        {index + 1}
-                      </div>
-
+                    <div className="relative w-full lg:w-1/2 mb-2 sm:mb-0">
                       {/* Integrated background with animation */}
                       <div className="relative transition-transform duration-500 hover:scale-105">
                         {/* Soft glow background - extends beyond animation */}
-                        <div className={`absolute -inset-8 rounded-full blur-3xl opacity-30 transition-all duration-1000 ${
-                          feature.reveal.isVisible ? 'opacity-30 scale-100' : 'opacity-0 scale-50'
+                        <div className={`absolute -inset-4 sm:-inset-6 md:-inset-8 rounded-full blur-2xl sm:blur-3xl opacity-20 sm:opacity-25 md:opacity-30 transition-all duration-1000 ${
+                          feature.reveal.isVisible ? 'opacity-20 sm:opacity-25 md:opacity-30 scale-100' : 'opacity-0 scale-50'
                         }`}
                         style={{
                           background: 'radial-gradient(circle, rgba(93,190,189,0.4) 0%, rgba(20,184,166,0.2) 50%, transparent 100%)',
                           transitionDelay: feature.reveal.isVisible ? `${index * 250 + 200}ms` : '0s',
                         }} />
 
-                        {/* Corner accent dots */}
-                        <div className={`absolute -top-3 -left-3 w-16 h-16 transition-all duration-1000 ${
-                          feature.reveal.isVisible ? 'opacity-20 scale-100' : 'opacity-0 scale-50'
+                        {/* Corner accent dots - hidden on mobile for cleaner look */}
+                        <div className={`hidden sm:block absolute -top-2 sm:-top-3 -left-2 sm:-left-3 w-10 sm:w-12 md:w-16 h-10 sm:h-12 md:h-16 transition-all duration-1000 ${
+                          feature.reveal.isVisible ? 'opacity-15 sm:opacity-20 scale-100' : 'opacity-0 scale-50'
                         }`}
                         style={{
                           background: 'radial-gradient(circle, rgba(93,190,189,0.6) 0%, transparent 70%)',
                           transitionDelay: feature.reveal.isVisible ? `${index * 250 + 250}ms` : '0s',
                         }} />
-                        <div className={`absolute -bottom-3 -right-3 w-20 h-20 transition-all duration-1000 ${
-                          feature.reveal.isVisible ? 'opacity-20 scale-100' : 'opacity-0 scale-50'
+                        <div className={`hidden sm:block absolute -bottom-2 sm:-bottom-3 -right-2 sm:-right-3 w-12 sm:w-16 md:w-20 h-12 sm:h-16 md:h-20 transition-all duration-1000 ${
+                          feature.reveal.isVisible ? 'opacity-15 sm:opacity-20 scale-100' : 'opacity-0 scale-50'
                         }`}
                         style={{
                           background: 'radial-gradient(circle, rgba(34,211,238,0.6) 0%, transparent 70%)',
@@ -217,7 +207,7 @@ export function About() {
                     </div>
 
                     {/* Content Side */}
-                    <div className={`w-full lg:w-3/5 ${isEven ? 'lg:pl-8' : 'lg:pr-8'}`}>
+                    <div className={`w-full lg:w-1/2 ${isEven ? 'lg:pl-4' : 'lg:pr-4'}`}>
                       <div className={`relative transition-all duration-700 ${
                         feature.reveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                       }`}
@@ -225,23 +215,23 @@ export function About() {
                         transitionDelay: feature.reveal.isVisible ? `${index * 250 + 500}ms` : '0s',
                       }}>
                         {/* Title with gradient underline */}
-                        <h3 className={`text-2xl lg:text-3xl font-black mb-3 ${isDark ? 'text-white' : 'text-gray-900'} ${isEven ? 'text-left' : 'text-left lg:text-right'}`}>
+                        <h3 className={`text-xl sm:text-2xl lg:text-3xl font-black mb-2 sm:mb-3 text-center lg:text-left ${isDark ? 'text-white' : 'text-gray-900'} ${isEven ? '' : 'lg:text-right'}`}>
                           {feature.title}
                         </h3>
-                        <div className={`h-1 w-20 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full mb-4 transition-all duration-700 ${
-                          feature.reveal.isVisible ? 'w-20' : 'w-0'
+                        <div className={`h-0.5 sm:h-1 w-16 sm:w-20 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full mb-3 sm:mb-4 mx-auto lg:mx-0 transition-all duration-700 ${
+                          feature.reveal.isVisible ? 'w-16 sm:w-20' : 'w-0'
                         } ${isEven ? '' : 'lg:ml-auto'}`}
                         style={{
                           transitionDelay: feature.reveal.isVisible ? `${index * 250 + 600}ms` : '0s',
                         }} />
 
                         {/* Description */}
-                        <p className={`text-base leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'} ${isEven ? 'text-left' : 'text-left lg:text-right'}`}>
+                        <p className={`text-sm sm:text-base leading-relaxed text-center lg:text-left ${isDark ? 'text-gray-300' : 'text-gray-700'} ${isEven ? '' : 'lg:text-right'}`}>
                           {feature.description}
                         </p>
 
                         {/* Decorative dots */}
-                        <div className={`flex gap-2 mt-6 ${isEven ? '' : 'lg:justify-end'}`}>
+                        <div className={`flex gap-2 mt-4 sm:mt-6 justify-center lg:justify-start ${isEven ? '' : 'lg:justify-end'}`}>
                           {[0, 1, 2].map((dot) => (
                             <div
                               key={dot}
